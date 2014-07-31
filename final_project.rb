@@ -3,29 +3,31 @@ require 'open-uri'
 require 'rubygems' # not necessary with ruby 1.9 but included for completeness
 require 'twilio-ruby'
 
-html = open("http://www.humansofnewyork.com/")
+class Quote
 
-nokogiri_doc = Nokogiri::HTML(html)
+  def initialize
+    nokogiri_doc = Nokogiri::HTML(open("http://www.humansofnewyork.com/"))
+    quote_text = nokogiri_doc.css(".caption").at(0)
+  end
 
-quote = nokogiri_doc.css(".p1").children.first
+end
+puts "Enter a number to text"
+send_to = gets.chomp
 
-puts "Quote obtained"
+class Send_quote
+  def initialize
+    # put your own credentials here
+    account_sid = "ACe330ba04d082392df4cb3511dcb72cec"
+    auth_token = "2008ea097713e401a16c54029058da82"
 
-# put your own credentials here
-account_sid = "ACe330ba04d082392df4cb3511dcb72cec"
-auth_token = "2008ea097713e401a16c54029058da82"
+    # set up a client to talk to the Twilio REST API
+    @client = Twilio::REST::Client.new account_sid, auth_token
 
-# set up a client to talk to the Twilio REST API
-@client = Twilio::REST::Client.new account_sid, auth_token
-
-@client.account.messages.create(
-  :from => '+18152642023',
-  :to => "+12038324748",
-  :body => quote
-  )
-
-puts "Message sent"
-
-
-
+    @client.account.messages.create(
+      :from => '+18152642023',
+      :to => send_to,
+      :body => tweet
+      )
+  end
+end
 
