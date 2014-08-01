@@ -17,4 +17,8 @@ p {background: #000000;
    font-family: 'Ubuntu Mono';
    text-align: center;}
 .link {text-align: center;}
-a {color: blue;}
+a {color: black;
+   background: #00FFFF;
+   padding: .25em;
+   border-radius: .25em;
+   opacity: .7;}
