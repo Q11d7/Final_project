@@ -1,0 +1,20 @@
+body {background-image: url(http://www.randiscandy.org/wp-content/uploads/2014/07/new-york-skyline-2013-at-night.jpg)}
+.title {color: #FFFFFF;
+    font-family: 'Ubuntu Mono';
+    text-align: center}
+form {color: #FFFFFF;
+      font-family: 'Ubuntu Mono';
+      text-align: center;}
+button {font-family: 'Ubuntu Mono';}
+div {text-align: center;}
+.video {border: solid #FFFFFF .3em;
+        padding: .25em;}
+p {background: #000000;
+   padding: .25em;
+   border-radius: .25em;
+   opacity: .7;
+   color: #FFFFFF;
+   font-family: 'Ubuntu Mono';
+   text-align: center;}
+.link {text-align: center;}
+a {color: blue;}

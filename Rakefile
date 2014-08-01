@@ -1,9 +1,7 @@
-require_relative 'project.rb'
+require_relative 'lib/project.rb'
 require 'nokogiri'
-require 'open-uri'
-require 'rubygems' # not necessary with ruby 1.9 but included for completeness
 require 'twilio-ruby'
 
-task do
-  quote = Quote.new.Send_Quote
+task :send_text do
+  Quote.new.Send_Quote("+12038324748")
 end
